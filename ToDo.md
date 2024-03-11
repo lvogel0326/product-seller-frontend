@@ -1,6 +1,4 @@
 TODO:
-Welcome page
--- with links to Sellers page
 
 Seller Page
 -- should load all seller information on startup
@@ -17,3 +15,5 @@ Optional
 dark/light mode made with react context
 
 Finished
+Welcome page
+-- with links to Sellers and Products page

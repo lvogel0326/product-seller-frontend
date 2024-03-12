@@ -1,6 +1,6 @@
 import React, { SyntheticEvent, useState } from "react";
 import { Seller } from "../Models/Seller";
-import { postSomeSeller } from "../Services/SellerAPIService";
+import { postSellerAPI } from "../Services/SellerAPIService";
 export function SellerSubmit() {
   const [nameInput, setNameInput] = useState<string>("");
   function nameInputHandler(event: SyntheticEvent) {
@@ -18,7 +18,7 @@ export function SellerSubmit() {
       id: parseInt(idInput),
       name: nameInput,
     };
-    postSomeSeller(seller);
+    postSellerAPI(seller);
   }
 
   return (

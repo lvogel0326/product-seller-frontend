@@ -1,14 +1,14 @@
-import { Seller } from "../Models/Seller";
+import { Product } from "../Models/Product";
 
 const apiBaseURL = "http://localhost:9017/";
-export function getAllSellersAPI() {
-  return fetch(apiBaseURL + "seller", {
+export function getallProductsAPI() {
+  return fetch(apiBaseURL + "product", {
     method: "GET",
     mode: "cors",
   });
 }
-export function postSellerAPI(data: Seller) {
-  return fetch(apiBaseURL + "seller", {
+export function postProductAPI(data: Product) {
+  return fetch(apiBaseURL + "product", {
     method: "POST",
     mode: "cors",
     headers: { "Content-Type": "application/json" },

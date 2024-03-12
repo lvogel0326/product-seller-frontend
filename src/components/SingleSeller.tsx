@@ -8,8 +8,16 @@ export function SingleSeller(props: propsInterface) {
   // const valueFromContext = useContext(UserContext)
   return (
     <>
-      <h2>{props.data.id}</h2>
-      <p>{props.data.name}</p>
+      <div
+        style={{
+          border: "2px solid black",
+          marginTop: "10px",
+          marginBottom: "10px",
+        }}
+      >
+        <h2>Seller ID: {props.data.id}</h2>
+        <p>Seller Name: {props.data.name}</p>
+      </div>
     </>
   );
 }

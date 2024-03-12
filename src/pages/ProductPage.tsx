@@ -4,7 +4,7 @@ import { ProductSubmit } from "../components/ProductSubmit";
 export function ProductPage() {
   return (
     <>
-      <h1>this is our product page</h1>
+      <h1>Products</h1>
       <ProductList></ProductList>
       <ProductSubmit></ProductSubmit>
     </>

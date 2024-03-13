@@ -5,7 +5,7 @@ import {
 } from "../Services/ProductAPIService";
 import { Product } from "../Models/Product";
 interface Props {
-  productID: number;
+  currentProduct: Product;
 }
 export function ProductUpdate(props: Props) {
   const [nameInput, setNameInput] = useState<string>("");
@@ -30,10 +30,10 @@ export function ProductUpdate(props: Props) {
     // Get entire product from parent
     // Pass updated product to API
     let product: Product = {
-      id: props.productID,
-      name: nameInput,
-      price: parseFloat(priceInput),
-      seller: parseInt(sellerInput),
+      id: props.currentProduct.id,
+      name: nameInput ? nameInput : props.currentProduct.name,
+      price: priceInput ? parseFloat(priceInput) : props.currentProduct.price,
+      seller: sellerInput ? parseInt(sellerInput) : props.currentProduct.seller,
     };
     updateProductAPI(product);
   }
@@ -41,7 +41,7 @@ export function ProductUpdate(props: Props) {
   function deleteProductHandler() {
     // Get product ID from parent component(SingleProduct)
     // Call delete function from our API and pass the ID
-    deleteProductAPI(props.productID);
+    deleteProductAPI(props.currentProduct.id);
   }
 
   return (
@@ -65,7 +65,6 @@ export function ProductUpdate(props: Props) {
         placeholder="Enter Seller ID"
       ></input>
       <button onClick={updateProductHandler}>Update Product</button>
-
       <h6>Delete this product</h6>
       <button onClick={deleteProductHandler}>Delete Product</button>
     </>

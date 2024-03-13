@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export function Navbar() {
   return (
     <>
-      <Link to="welcome">Go to Welcome</Link>
+      <Link to="/">Go to Welcome</Link>
       &ensp;
       <Link to="productPage">Go to Product Page</Link>
       &ensp;

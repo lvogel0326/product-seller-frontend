@@ -61,7 +61,7 @@ export function SingleProduct(props: propsInterface) {
             Toggle Options
           </button>
         )}
-        {displayOptions ? <ProductUpdate productID={props.data.id} /> : null}
+        {displayOptions ? <ProductUpdate currentProduct={props.data} /> : null}
       </div>
     </>
   );

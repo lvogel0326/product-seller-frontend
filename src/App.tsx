@@ -30,11 +30,12 @@ function App() {
   return (
     <>
       <ThemeContext.Provider value={theme}>
-        <button onClick={toggleTheme}>Toggle Theme</button>
         <BrowserRouter>
           <Navbar></Navbar>
+          <br></br>
+          <button onClick={toggleTheme}>Toggle Theme</button>
           <Routes>
-            <Route path="welcome" element={<WelcomePage></WelcomePage>} />
+            <Route path="/" element={<WelcomePage></WelcomePage>} />
             <Route path="productPage" element={<ProductPage></ProductPage>} />
             <Route path="sellerPage" element={<SellerPage></SellerPage>} />
             <Route

@@ -3,9 +3,8 @@ Display Seller Name instead of ID
 Change price to Double
 
 Optional
--- dark/light mode made with react context
 
----
+
 
 Finished
 Welcome page
@@ -24,3 +23,4 @@ Product Page
 Optional
 -- Borders around Product and Seller entries in List
 -- "page not found" page
+-- dark/light mode made with react context

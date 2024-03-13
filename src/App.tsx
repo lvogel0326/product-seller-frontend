@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";  
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -7,10 +7,29 @@ import { PageNotFoundPage } from "./pages/PageNotFoundPage";
 import { WelcomePage } from "./pages/WelcomePage";
 import { ProductPage } from "./pages/ProductPage";
 import { SellerPage } from "./pages/SellerPage";
+import './DarkMode.css'; 
+
+
 
 function App() {
+  const [theme, setTheme] = useState('light');
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  };
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   return (
     <>
+    <div className={`App ${theme}`}>
+     <button  onClick={toggleTheme}>Toggle Theme</button>
+
       <BrowserRouter>
         <Navbar></Navbar>
         <Routes>
@@ -23,6 +42,7 @@ function App() {
           ></Route>
         </Routes>
       </BrowserRouter>
+      </div>
     </>
   );
 }

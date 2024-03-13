@@ -1,11 +1,3 @@
-TODO:
-Display Seller Name instead of ID
-Change price to Double
-
-Optional
-
-
-
 Finished
 Welcome page
 -- with links to Sellers and Products page
@@ -24,3 +16,5 @@ Optional
 -- Borders around Product and Seller entries in List
 -- "page not found" page
 -- dark/light mode made with react context
+-- Display Seller Name instead of ID
+-- Change price to Double

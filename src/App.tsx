@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";  
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -9,6 +9,8 @@ import { ProductPage } from "./pages/ProductPage";
 import { SellerPage } from "./pages/SellerPage";
 import './DarkMode.css'; 
 
+
+
 function App() {
   const [theme, setTheme] = useState('light');
   const toggleTheme = () => {
@@ -18,17 +20,18 @@ function App() {
       setTheme('light');
     }
   };
+
   useEffect(() => {
     document.body.className = theme;
   }, [theme]);
+
   return (
     <>
     <div className={`App ${theme}`}>
+     <button  onClick={toggleTheme}>Toggle Theme</button>
+
       <BrowserRouter>
         <Navbar></Navbar>
-        
-         <button  onClick={toggleTheme}>Toggle Theme</button>
-
         <Routes>
           <Route path="welcome" element={<WelcomePage></WelcomePage>} />
           <Route path="productPage" element={<ProductPage></ProductPage>} />

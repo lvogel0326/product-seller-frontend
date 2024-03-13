@@ -15,7 +15,6 @@ export function postProductAPI(data: Product) {
     body: JSON.stringify(data),
   });
 }
-//TODO: Finish this method
 export function updateProductAPI(data: Product) {
   return fetch(apiBaseURL + "product/" + data.id, {
     method: "PUT",

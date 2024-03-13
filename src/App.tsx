@@ -17,7 +17,9 @@ function App() {
           <Route path="welcome" element={<WelcomePage></WelcomePage>} />
           <Route path="productPage" element={<ProductPage></ProductPage>} />
           <Route path="sellerPage" element={<SellerPage></SellerPage>} />
-          <Route path="*" element={<PageNotFoundPage></PageNotFoundPage>}
+          <Route
+            path="*"
+            element={<PageNotFoundPage></PageNotFoundPage>}
           ></Route>
         </Routes>
       </BrowserRouter>

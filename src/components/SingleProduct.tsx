@@ -1,15 +1,24 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Product } from "../Models/Product";
 import { ProductUpdate } from "./ProductUpdate";
-import { ProductOptions } from "./ProductOptions";
-//import { UserContext } from "../App";
+import { getSellerByIdAPI } from "../Services/SellerAPIService";
 interface propsInterface {
   data: Product;
 }
 
 export function SingleProduct(props: propsInterface) {
-  // const valueFromContext = useContext(UserContext)
   const [displayOptions, setOptionsDisplay] = useState<boolean>(false);
+  const [sellerName, setSellerName] = useState<string>("");
+
+  useEffect(() => {
+    getSellerByIdAPI(props.data.seller)
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        setSellerName(json.name);
+      });
+  }, []);
 
   function openOptionsHandler() {
     setOptionsDisplay(true);
@@ -40,7 +49,7 @@ export function SingleProduct(props: propsInterface) {
           <br></br>
         </span>
         <span>
-          Seller: {props.data.seller}
+          Seller: {sellerName}
           <br></br>
         </span>
         {displayOptions ? (
@@ -52,11 +61,7 @@ export function SingleProduct(props: propsInterface) {
             Toggle Options
           </button>
         )}
-        {displayOptions ? (
-          <ProductUpdate productID={props.data.id} />
-        ) : (
-          <span>Click to display options</span>
-        )}
+        {displayOptions ? <ProductUpdate productID={props.data.id} /> : null}
       </div>
     </>
   );

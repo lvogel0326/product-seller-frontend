@@ -32,7 +32,7 @@ export function ProductUpdate(props: Props) {
     let product: Product = {
       id: props.productID,
       name: nameInput,
-      price: parseInt(priceInput),
+      price: parseFloat(priceInput),
       seller: parseInt(sellerInput),
     };
     updateProductAPI(product);
